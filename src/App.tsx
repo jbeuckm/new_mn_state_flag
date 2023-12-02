@@ -1,12 +1,12 @@
-import { Button, Stack } from "@mui/material";
+import { Box, Button, Stack } from "@mui/material";
 import { useState } from "react";
 import { ChromePicker } from "react-color";
 import * as htmlToImage from "html-to-image";
 
 function App() {
-  const [hoistColor, setHoistColor] = useState("#112244");
-  const [starColor, setStarColor] = useState("#ffffff");
-  const [stateColor, setStateColor] = useState("#88d1f8");
+  const [hoistColor, setHoistColor] = useState("#153573");
+  const [starColor, setStarColor] = useState("#EBDF09");
+  const [stateColor, setStateColor] = useState("#009BEF");
 
   return (
     <Stack>
@@ -68,23 +68,25 @@ function App() {
         </svg>
       </div>
 
-      <Stack direction="row">
-        <ChromePicker
-          disableAlpha
-          color={starColor}
-          onChange={({ hex }) => setStarColor(hex)}
-        />
-        <ChromePicker
-          disableAlpha
-          color={hoistColor}
-          onChange={({ hex }) => setHoistColor(hex)}
-        />
-        <ChromePicker
-          disableAlpha
-          color={stateColor}
-          onChange={({ hex }) => setStateColor(hex)}
-        />
-      </Stack>
+      <Box style={{ backgroundColor: "#ffffff" }}>
+        <Stack direction="row">
+          <ChromePicker
+            disableAlpha
+            color={starColor}
+            onChange={({ hex }) => setStarColor(hex)}
+          />
+          <ChromePicker
+            disableAlpha
+            color={hoistColor}
+            onChange={({ hex }) => setHoistColor(hex)}
+          />
+          <ChromePicker
+            disableAlpha
+            color={stateColor}
+            onChange={({ hex }) => setStateColor(hex)}
+          />
+        </Stack>
+      </Box>
       <Button
         variant="contained"
         onClick={() => {
