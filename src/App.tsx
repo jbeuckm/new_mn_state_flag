@@ -1,5 +1,5 @@
 import { Box, Button, Stack } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChromePicker } from "react-color";
 import * as htmlToImage from "html-to-image";
 
@@ -7,6 +7,17 @@ function App() {
   const [hoistColor, setHoistColor] = useState("#153573");
   const [starColor, setStarColor] = useState("#EBDF09");
   const [stateColor, setStateColor] = useState("#009BEF");
+
+  useEffect(() => {
+    var node = document.getElementById("flag");
+
+    if (!node) return;
+
+    htmlToImage.toPng(node, { cacheBust: true }).then((dataUrl) => {
+      // @ts-ignore - it's there because the html has flagWaver code
+      window.flagWaver.flag.setOpts({ imgSrc: dataUrl });
+    });
+  }, [hoistColor, starColor, stateColor]);
 
   return (
     <Stack>
