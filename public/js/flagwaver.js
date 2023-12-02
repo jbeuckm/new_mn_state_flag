@@ -63,6 +63,8 @@
   //
   // Global settings
   //
+  const FLAG_X_OFFSET = 200;
+  const FLAG_Y_OFFSET = 100;
 
   // Enable debug mode
   var isDebugMode = false;
@@ -1103,8 +1105,8 @@
       shininess: 18,
     });
     poleMesh = new THREE.Mesh(poleGeo, poleMat);
-    poleMesh.position.y = poleOffset - poleHeight / 2;
-    poleMesh.position.x = -4;
+    poleMesh.position.y = poleOffset - poleHeight / 2 + FLAG_Y_OFFSET;
+    poleMesh.position.x = FLAG_X_OFFSET - 4;
     poleMesh.receiveShadow = true;
     poleMesh.castShadow = true;
     scene.add(poleMesh);
@@ -1130,7 +1132,7 @@
     flag = new Flag();
     flag.setTopEdge("top");
     flag.setHoisting("dexter");
-    flag.setPosition(0, poleOffset, 0);
+    flag.setPosition(FLAG_X_OFFSET, poleOffset + FLAG_Y_OFFSET, 0);
     flag.setTexture(blankTexture);
     scene.add(flag.object);
     publicFlag = flag.createPublic();
