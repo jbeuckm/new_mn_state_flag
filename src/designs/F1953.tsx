@@ -4,9 +4,9 @@ export const F1953 = ({ color1, color2, color3, setDefaultColors }: any) => {
   useEffect(() => {
     setDefaultColors &&
       setDefaultColors({
-        color1: "#153573",
-        color2: "#EBDF09",
-        color3: "#009BEF",
+        color1: "#22375F",
+        color2: "#ffffff",
+        color3: "#88D4FE",
       });
   }, []);
 
