@@ -4,6 +4,8 @@ import { ChromePicker } from "react-color";
 import * as htmlToImage from "html-to-image";
 import { F1953 } from "./designs/F1953";
 import { F1154 } from "./designs/F1154";
+import { F29 } from "./designs/F29";
+import { F1228 } from "./designs/F1228";
 
 function App() {
   const queryString = window.location.search;
@@ -11,11 +13,18 @@ function App() {
 
   let Design;
   switch (urlParams.get("d")) {
+    case "F29":
+      Design = F29;
+      break;
     case "F1154":
       Design = F1154;
       break;
-    default:
+    case "F1953":
       Design = F1953;
+      break;
+    case "F1228":
+    default:
+      Design = F1228;
       break;
   }
 
