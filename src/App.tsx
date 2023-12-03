@@ -41,7 +41,7 @@ function App() {
           color1={color1}
           color2={color2}
           color3={color3}
-          setDefaultColors={({ color1, color2, color3 }) => {
+          setDefaultColors={({ color1, color2, color3 }: any) => {
             setColor1(color1);
             setColor2(color2);
             setColor3(color3);
