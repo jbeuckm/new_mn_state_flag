@@ -3,11 +3,21 @@ import { useEffect, useState } from "react";
 import { ChromePicker } from "react-color";
 import * as htmlToImage from "html-to-image";
 import { F1953 } from "./designs/F1953";
+import { F1154 } from "./designs/F1154";
 
 function App() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  console.log(urlParams.get("d"));
+
+  let Design;
+  switch (urlParams.get("d")) {
+    case "F1154":
+      Design = F1154;
+      break;
+    default:
+      Design = F1953;
+      break;
+  }
 
   const [color1, setColor1] = useState("#153573");
   const [color2, setColor2] = useState("#EBDF09");
@@ -27,7 +37,7 @@ function App() {
   return (
     <Stack>
       <div id="flag">
-        <F1953
+        <Design
           color1={color1}
           color2={color2}
           color3={color3}
