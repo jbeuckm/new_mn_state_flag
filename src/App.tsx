@@ -6,6 +6,7 @@ import { F1953 } from "./designs/F1953";
 import { F1154 } from "./designs/F1154";
 import { F29 } from "./designs/F29";
 import { F1228 } from "./designs/F1228";
+import { F2100 } from "./designs/F2100";
 
 function App() {
   const queryString = window.location.search;
@@ -21,6 +22,9 @@ function App() {
       break;
     case "F1953":
       Design = F1953;
+      break;
+    case "F2100":
+      Design = F2100;
       break;
     case "F1228":
     default:
@@ -80,7 +84,7 @@ function App() {
       <Button
         variant="contained"
         onClick={() => {
-          var node = document.getElementById("flag");
+          var node = document.getElementById("flag")?.childNodes[0];
 
           if (!node) return;
 
