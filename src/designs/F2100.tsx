@@ -1,5 +1,10 @@
 import { useEffect } from "react";
 
+const sin45 = 1 / Math.sqrt(2);
+
+const P1 = `M 0 0 L 1 0 L ${1 + sin45} ${sin45} L ${sin45} ${sin45} L 0 0`;
+const P2 = `M 0 0 L 1 0 L ${1 + sin45} ${-sin45} L ${sin45} ${-sin45} L 0 0`;
+
 export const F2100 = ({ color1, color2, color3, setDefaultColors }: any) => {
   useEffect(() => {
     setDefaultColors &&
@@ -22,24 +27,21 @@ export const F2100 = ({ color1, color2, color3, setDefaultColors }: any) => {
         strokeWidth={1}
       >
         <g transform="rotate(45)">
-          <path d="M 0 0 L 1 0 L 1.7071 .7071 L .7071 .7071" />
-          <path d="M 0 0 L 1 0 L 1.7071 -.7071 L .7071 -.7071" />
+          <path d={P1} />
+          <path d={P2} />
         </g>
         <g transform="rotate(135)">
-          <path d="M 0 0 L 1 0 L 1.7071 .7071 L .7071 .7071" />
-          <path d="M 0 0 L 1 0 L 1.7071 -.7071 L .7071 -.7071" />
+          <path d={P1} />
+          <path d={P2} />
         </g>
         <g transform="rotate(-45)">
-          <path d="M 0 0 L 1 0 L 1.7071 .7071 L .7071 .7071" />
-          <path d="M 0 0 L 1 0 L 1.7071 -.7071 L .7071 -.7071" />
+          <path d={P1} />
+          <path d={P2} />
         </g>
         <g transform="rotate(-135)">
-          <path d="M 0 0 L 1 0 L 1.7071 .7071 L .7071 .7071" />
-          <path d="M 0 0 L 1 0 L 1.7071 -.7071 L .7071 -.7071" />
+          <path d={P1} />
+          <path d={P2} />
         </g>
-        <use href="#quarter" transform="rotate(135)" />
-        <use href="#quarter" transform="rotate(-135)" />
-        <use href="#quarter" transform="rotate(45)" />
       </g>
     </svg>
   );
