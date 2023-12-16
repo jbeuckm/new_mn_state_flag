@@ -84,7 +84,9 @@ function App() {
       <Button
         variant="contained"
         onClick={() => {
-          var node = document.getElementById("flag")?.childNodes[0];
+          // @ts-ignore
+          var node = document.getElementById("flag")
+            ?.childNodes[0] as HTMLElement;
 
           if (!node) return;
 
