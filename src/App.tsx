@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { ChromePicker } from "react-color";
 import * as htmlToImage from "html-to-image";
 import { F1953 } from "./designs/F1953";
+import { F1953L } from "./designs/F1953L";
 import { F1154 } from "./designs/F1154";
 import { F29 } from "./designs/F29";
 import { F1228 } from "./designs/F1228";
@@ -22,6 +23,9 @@ function App() {
       break;
     case "F1953":
       Design = F1953;
+      break;
+    case "F1953L":
+      Design = F1953L;
       break;
     case "F2100":
       Design = F2100;
