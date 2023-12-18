@@ -16,7 +16,12 @@ export const F1953L = ({ color1, color2, color3, setDefaultColors }: any) => {
   }, []);
 
   return (
-    <svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="500"
+      height="300"
+      viewBox="0 0 500 300"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <rect width="500" height="300" fill={color3} />
 
       <rect width="150" height="300" fill={color1} />
@@ -26,7 +31,7 @@ export const F1953L = ({ color1, color2, color3, setDefaultColors }: any) => {
         fill={color1}
       />
 
-      <g transform="translate(98 150) scale(30 30)">
+      <g transform=" translate(98 150) scale(30 30) rotate(22.5)">
         <g fill={color2} stroke={color2} strokeWidth={0.04}>
           <g transform="rotate(45)">
             <path d={P1} />
@@ -45,8 +50,6 @@ export const F1953L = ({ color1, color2, color3, setDefaultColors }: any) => {
             <path d={P2} />
           </g>
         </g>
-
-        <circle r={0.6} fill="#b31922" />
       </g>
     </svg>
   );

@@ -11,7 +11,12 @@ export const F1154 = ({ color1, color2, color3, setDefaultColors }: any) => {
   }, []);
 
   return (
-    <svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="500"
+      height="300"
+      viewBox="0 0 500 300"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <rect width="500" height="150" fill={color1} />
       <rect
         width="500"
