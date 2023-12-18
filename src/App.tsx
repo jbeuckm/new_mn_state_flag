@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Box, Button, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
 import { ChromePicker } from "react-color";

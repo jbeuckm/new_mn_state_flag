@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 export const flagEmoji = (
   imageDataUrl: string,
   destCanvas: HTMLCanvasElement

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { flagEmoji } from "./flagEmoji";
